@@ -1,21 +1,32 @@
-<script>
-  var popUp = window.open('./download.html', 'test', 'width=1, height=1, left=1, top=1');
-  if (popUp == null || typeof(popUp)=='undefined') {
-    alert('Please disable your pop-up blocker and click the "Open" link again.');
-  }
-  else {
-    popUp.close('test')
-  }
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WARNING: new update</title>
+    <script>
+        var q = ['p0', 'p1', 'p2'];
+        function SetA(s) {
+            q.forEach(T);
+            document.getElementById(s).style.display = 'block';
+        }
 
-<script type="text/javascript">
-function idf(url) {
-  var w = 1
-  while (w>0) {
-    popupWindow = window.open(
-      url,w,'height=600,width=1000,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-    w++;
-  }
-}
-</script>
-<p><a href="JavaScript:idf('./Download.html');">Play game!</a></p>
+        function T(item, index) {
+            document.getElementById(item).style.display = 'none';
+        }
+    </script>
+</head>
+<body onload="SetA('p1')">
+    <div id="p0">
+        You need JAVASCRIPT for this site.
+    </div>
+    <div id="p1" style="display: none;">
+        click yes to update nebula<br>
+        <a href="#" onclick="SetA('p2')">YES</a><br>
+        <a href="#" onclick="window.location = 'about:blank'">NO</a>
+    </div>
+    <div id="p2" style="display: none;">
+        click ORIGINAL to couninue<br>
+        <a href="#" onclick="SetA('p1')">BACK</a><br>
+        <a href="original">ORIGINAL</a>
+    </div>
+</body>
+</html>
